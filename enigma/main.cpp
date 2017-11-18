@@ -13,20 +13,23 @@
 #include "enigma.hpp"
 
 #define MIN_ARG_COUNT 3
+#define PB_FILE_ARG 1
+#define RF_FILE_ARG 2
 
 using namespace EnigmaTypes;
 using namespace std;
 
 int main(int argc, path argv[]) {
     
-    if (argc < MIN_ARG_COUNT) {
+    //There cannot be any scenario where argCount < MIN_ARG_COUNT or equal to 4
+    // Valid scenarios are argc = 3 (no rotor) or argc= 5+
+    if (argc < MIN_ARG_COUNT || argc == 4) {
         cout << "Insufficent number of input parameters" << endl;
         exit(INSUFFICIENT_NUMBER_OF_PARAMETERS);
     }
     
-    
-    path pbFile = argv[0];
-    path rfFile = argv[1];
+    path pbFile = argv[PB_FILE_ARG];
+    path rfFile = argv[RF_FILE_ARG];
     path posFile = NULL; //Assume no rotor unless arg count >= 5
         vector<path> rotFiles;
     

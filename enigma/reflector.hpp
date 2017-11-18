@@ -9,15 +9,16 @@
 #ifndef Reflector_hpp
 #define Reflector_hpp
 
-#include <stdio.h>
+#include <iostream>
 #include <vector>
 
 #include "globals.h"
 
-using namespace std;
-
 class Reflector {
-    std::vector<unsigned short int> reflectedPairs;
+    std::vector<EnigmaTypes::location> reflectedPairs;
+    
+    //Makes sure input read from file is valid otherwise exits with corresponding error
+    void loadInput(EnigmaTypes::path rfFile);
 public:
     Reflector(EnigmaTypes::path rfFile);
 };

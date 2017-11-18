@@ -8,7 +8,10 @@
 
 #include "enigma.hpp"
 
-Enigma::Enigma(const char* pbFile, const char * rfFile, std::vector<const char*> rotFiles, const char * posFile) : plugboard(pbFile), reflector(rfFile) {
+Enigma::Enigma(EnigmaTypes::path pbFile, EnigmaTypes::path rfFile, std::vector<EnigmaTypes::path> rotFiles, EnigmaTypes::path posFile) : plugboard(pbFile), reflector(rfFile) {
     
+    // Iterate over all rotor files vector and append a created rotor for each rotfile.
+    for( int i = 0; i < rotFiles.size(); ++i)
+        rotors.push_back(Rotor(rotFiles[i], posFile, i));
 }
 

@@ -9,13 +9,16 @@
 #ifndef Plugboard_hpp
 #define Plugboard_hpp
 
-#include <stdio.h>
+#include <iostream>
 #include <vector>
 
 #include "globals.h"
 
 class Plugboard {
-    std::vector<unsigned short int> cables;
+    std::vector<EnigmaTypes::location> cables;
+    
+    //Makes sure input read from file is valid before storing otherwise exits with corresponding error
+    void loadInput(EnigmaTypes::path pbFile);
 public:
     Plugboard(EnigmaTypes::path pbFile);
 };

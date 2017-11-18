@@ -9,7 +9,7 @@
 #ifndef Enigma_hpp
 #define Enigma_hpp
 
-#include <stdio.h>
+#include <iostream>
 #include <vector>
 
 #include "rotor.hpp"
@@ -21,7 +21,7 @@ class Enigma {
     Plugboard plugboard;
     Reflector reflector;
 public:
-    Enigma(const char* pbFile, const char * rfFile, std::vector<const char*> rotFiles, const char * posFile);
+    Enigma(EnigmaTypes::path pbFile, EnigmaTypes::path rfFile, std::vector<EnigmaTypes::path> rotFiles, EnigmaTypes::path posFile);
 };
 
 #endif /* Enigma_hpp */
