@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E62450B1FBFC6E9008E015B /* plugboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E6245091FBFC6E9008E015B /* plugboard.cpp */; };
+		3E62450E1FBFC770008E015B /* reflector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E62450C1FBFC770008E015B /* reflector.cpp */; };
+		3E6245111FBFC7C5008E015B /* rotor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E62450F1FBFC7C5008E015B /* rotor.cpp */; };
+		3E6245141FBFC9BB008E015B /* enigma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E6245121FBFC9BB008E015B /* enigma.cpp */; };
 		3EEB66511FBCDAD4002D26DB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EEB66501FBCDAD4002D26DB /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +27,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E6245091FBFC6E9008E015B /* plugboard.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = plugboard.cpp; sourceTree = "<group>"; };
+		3E62450A1FBFC6E9008E015B /* plugboard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = plugboard.hpp; sourceTree = "<group>"; };
+		3E62450C1FBFC770008E015B /* reflector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = reflector.cpp; sourceTree = "<group>"; };
+		3E62450D1FBFC770008E015B /* reflector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = reflector.hpp; sourceTree = "<group>"; };
+		3E62450F1FBFC7C5008E015B /* rotor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rotor.cpp; sourceTree = "<group>"; };
+		3E6245101FBFC7C5008E015B /* rotor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rotor.hpp; sourceTree = "<group>"; };
+		3E6245121FBFC9BB008E015B /* enigma.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enigma.cpp; sourceTree = "<group>"; };
+		3E6245131FBFC9BB008E015B /* enigma.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = enigma.hpp; sourceTree = "<group>"; };
+		3E6245151FBFD289008E015B /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
 		3EEB664D1FBCDAD4002D26DB /* enigma */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = enigma; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEB66501FBCDAD4002D26DB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3EEB66571FBCDCAF002D26DB /* errors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = errors.h; sourceTree = "<group>"; };
@@ -59,7 +72,16 @@
 			isa = PBXGroup;
 			children = (
 				3EEB66571FBCDCAF002D26DB /* errors.h */,
+				3E6245151FBFD289008E015B /* globals.h */,
 				3EEB66501FBCDAD4002D26DB /* main.cpp */,
+				3E6245091FBFC6E9008E015B /* plugboard.cpp */,
+				3E62450A1FBFC6E9008E015B /* plugboard.hpp */,
+				3E62450C1FBFC770008E015B /* reflector.cpp */,
+				3E62450D1FBFC770008E015B /* reflector.hpp */,
+				3E62450F1FBFC7C5008E015B /* rotor.cpp */,
+				3E6245101FBFC7C5008E015B /* rotor.hpp */,
+				3E6245121FBFC9BB008E015B /* enigma.cpp */,
+				3E6245131FBFC9BB008E015B /* enigma.hpp */,
 			);
 			path = enigma;
 			sourceTree = "<group>";
@@ -121,7 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6245111FBFC7C5008E015B /* rotor.cpp in Sources */,
+				3E62450E1FBFC770008E015B /* reflector.cpp in Sources */,
+				3E62450B1FBFC6E9008E015B /* plugboard.cpp in Sources */,
 				3EEB66511FBCDAD4002D26DB /* main.cpp in Sources */,
+				3E6245141FBFC9BB008E015B /* enigma.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
