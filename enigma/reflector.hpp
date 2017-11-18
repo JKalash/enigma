@@ -21,6 +21,9 @@ class Reflector {
     void loadInput(EnigmaTypes::path rfFile);
 public:
     Reflector(EnigmaTypes::path rfFile);
+    
+    //Maps an input to a potential output if found in cables, otherwise itself.
+    EnigmaTypes::location reflect(EnigmaTypes::location entry) const;
 };
 
 #endif /* Reflector_hpp */

@@ -74,3 +74,18 @@ void Reflector::loadInput(EnigmaTypes::path rfFile) {
     rfInput.close();
     
 }
+
+EnigmaTypes::location Reflector::reflect(EnigmaTypes::location entry) const {
+    
+    /* Similar to plugboard, find the value of entry and map to either
+     * value before (if index is odd, or after if index is even)
+     */
+    
+    //Try to find the location in cables
+    for(int i = 0; i < reflectedPairs.size(); i++)
+        if ( entry == reflectedPairs[i] )
+            return i%2 == 0 ? reflectedPairs[i+1] : reflectedPairs[i-1]; //Even cables map to the next odd one. Odd cables map to the even one just before them
+    
+    //Should NEVER be reached. No reflection for following input. Stays the same
+    return entry;
+}

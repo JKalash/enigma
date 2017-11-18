@@ -21,6 +21,9 @@ class Plugboard {
     void loadInput(EnigmaTypes::path pbFile);
 public:
     Plugboard(EnigmaTypes::path pbFile);
+    
+    //Maps an input to a potential output if found in cables, otherwise itself.
+    EnigmaTypes::location map(EnigmaTypes::location original) const;
 };
 
 #endif /* Plugboard_hpp */

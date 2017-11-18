@@ -133,3 +133,35 @@ void Rotor::loadRotor(EnigmaTypes::path rotFile) {
     rotInput.close();
     
 }
+
+
+EnigmaTypes::location Rotor::map(EnigmaTypes::location original, bool rightToleft) const {
+    
+    /* For right to left, we need to return the value at index 'original'
+     * For left to right we need to find the index of value 'original'
+    */
+    
+    if(rightToleft)
+        return wirings[original];
+    
+    for(int i = 0; i < wirings.size(); i++)
+        if ( original == wirings[i])
+            return i;
+    
+    //Should never be reached
+    return original;
+}
+
+bool Rotor::shouldrotateLeftRotor() const {
+    
+    for(int i = 0; i < notches.size(); i++)
+        if(notches[i] == position)
+            return true;
+    
+    return false;
+}
+
+void Rotor::rotate() {
+    
+    position = (position+1) % ROTOR_SIZE;
+}

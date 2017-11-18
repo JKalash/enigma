@@ -43,7 +43,20 @@ int main(int argc, path argv[]) {
         posFile = argv[argc - 1];
     }
     
-    const Enigma enigma = Enigma(pbFile, rfFile, rotFiles, posFile);
+    Enigma encryptor = Enigma(pbFile, rfFile, rotFiles, posFile);
+    Enigma decryptor = Enigma(pbFile, rfFile, rotFiles, posFile);
+    
+    std::string original;
+    //Read the whole line
+    std::getline(std::cin, original);
+    
+    //Write output to console
+    std::string encryption = encryptor.encrypt(original);
+    std::string decryption = decryptor.encrypt(encryption);
+    
+    std:: cout << "ORIGINAL : " << original << std::endl;
+    std:: cout << "ENCRYPTED: " << encryption << std::endl;
+    std:: cout << "DECRYPTED: " << decryption << std::endl;
     
     return NO_ERROR;
 }

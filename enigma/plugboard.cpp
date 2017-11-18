@@ -70,3 +70,14 @@ void Plugboard::loadInput(EnigmaTypes::path pbFile) {
     pbInput.close();
     
 }
+
+EnigmaTypes::location Plugboard::map(EnigmaTypes::location original) const {
+    
+    //Try to find the location in cables
+    for(int i = 0; i < cables.size(); i++)
+        if ( original == cables[i] )
+            return i%2 == 0 ? cables[i+1] : cables[i-1]; //Even cables map to the next odd one. Odd cables map to the even one just before them
+
+    //No cable for following input. Stays the same
+    return original;
+}
