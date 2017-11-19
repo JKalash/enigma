@@ -137,16 +137,23 @@ void Rotor::loadRotor(EnigmaTypes::path rotFile) {
 
 EnigmaTypes::location Rotor::map(EnigmaTypes::location original, bool rightToleft) const {
     
-    /* For right to left, we need to return the value at index 'original'
-     * For left to right we need to find the index of value 'original'
+    /* For right to left, we need to return the value at index 'original' shifted by position
+     * For left to right we need to find the index of value 'original' shifted by position
     */
     
-    if(rightToleft)
-        return wirings[original];
+    //Figure out what's in input 'original'
+    EnigmaTypes::location charaterAtOriginal = (original - position + ROTOR_SIZE) % ROTOR_SIZE;
     
+    if(rightToleft) {
+        EnigmaTypes::location map = wirings[charaterAtOriginal];
+        //The map is at its initial position shifted by pos mod 26
+        return (map + position) % 26;
+    }
+    
+    //Find what character maps to the charAtOriginal
     for(int i = 0; i < wirings.size(); i++)
-        if ( original == wirings[i])
-            return i;
+        if (charaterAtOriginal == wirings[i])
+            return (i + position) % ROTOR_SIZE;
     
     //Should never be reached
     return original;
